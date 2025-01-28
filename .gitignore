@@ -1,0 +1,12 @@
+bootloader/
+modules/
+nrf/
+nrfxlib/
+test/
+tools/
+zephyr/
+.venv/
+.west/
+.vscode/
+.python-version
+uv.lock
