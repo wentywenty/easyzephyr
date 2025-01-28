@@ -14,7 +14,7 @@ function Show-Welcome {
     Write-Host "      Zephyr 开发环境一键安装工具     " -ForegroundColor $Theme.Title
     Write-Host "====================================" -ForegroundColor $Theme.Title
     Write-Host "`n作者: Github@wentywenty" -ForegroundColor $Theme.Title
-    Write-Host "版本: v1.2`n" -ForegroundColor $Theme.Title
+    Write-Host "版本: v1.2.1`n" -ForegroundColor $Theme.Title
 }
 
 # 显示主菜单
@@ -142,8 +142,6 @@ function Start-Installation {
             }
             '4' {
                 Write-Host "`n安装choco及相关依赖" -ForegroundColor $Theme.Success
-
-
 
             }            
             '5' {
