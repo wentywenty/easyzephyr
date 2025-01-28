@@ -1,5 +1,6 @@
 Write-Host "`n欢迎使用一键安装zephyr脚本,人生苦短,快用一键安装~" -ForegroundColor Green
 Write-Host "`n作者:Github:wentywenty" -ForegroundColor Green
+Write-Host "`n版本:v1.0" -ForegroundColor Green
 
 Write-Host "`n正在检查并安装 Scoop 包管理器..." -ForegroundColor Green
 if (!(Get-Command scoop -ErrorAction SilentlyContinue)) {
