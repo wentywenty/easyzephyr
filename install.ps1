@@ -1,16 +1,16 @@
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
-scoop install git
+# Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+# Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+# scoop install git
 
-scoop install ninja wget uv
+# scoop install ninja wget uv
 git clone https://github.com/wentywenty/zephyr.git
 
-scoop install ./dtc.json 
-scoop install ./gperf.json 
-scoop install ./nrfutil.json
+# scoop install ./dtc.json 
+# scoop install ./gperf.json 
+# scoop install ./nrfutil.json
 
-uv python install 3.11
-uv venv
+# uv python install 3.11
+# uv venv
 # .venv\Scripts\activate       
 
 # uv pip install west
