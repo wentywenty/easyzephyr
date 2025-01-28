@@ -11,5 +11,5 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ### 下载并执行安装脚本
 
 ```powershell
-Invoke-RestMethod -Uri "https://raw.githubusercontent.com/wentywenty/zephyr/main/install.ps1" | Invoke-Expression
+(Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wentywenty/zephyr/main/install.ps1").Content | Invoke-Expression
 ```

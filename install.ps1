@@ -1,9 +1,9 @@
-# Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-# Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 # scoop install git
 
 # scoop install ninja wget uv
 git clone https://github.com/wentywenty/zephyr.git
+cd zephyr
 
 # scoop install ./dtc.json 
 # scoop install ./gperf.json 
