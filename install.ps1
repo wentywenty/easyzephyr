@@ -11,10 +11,8 @@ if (!(Get-Command scoop -ErrorAction SilentlyContinue)) {
     scoop bucket add extras
 }
 
-
 Write-Host "正在更新Scoop..." -ForegroundColor Yellow
 scoop update *
-
 
 Write-Host "`n正在安装基础开发工具..." -ForegroundColor Green
 scoop install git
@@ -26,7 +24,8 @@ if (!(Test-Path "zephyr")) {
 } else {
     Write-Host "Zephyr 目录已存在，跳过克隆..." -ForegroundColor Yellow
 }
-cd zephyr
+
+Set-Location zephyr
 
 Write-Host "`n正在安装编译工具..." -ForegroundColor Green
 scoop install ./dtc.json 
@@ -45,11 +44,27 @@ uv pip install west
 Write-Host "`n初始化 West 工作区..." -ForegroundColor Green
 west init -m https://github.com/nrfconnect/sdk-nrf
 
+Write-Host "`n正在更新 West..." -ForegroundColor Green
+Write-Host "`n请保持网络稳定连接" -ForegroundColor Green
+# west update
+
 Write-Host "`n安装项目依赖..." -ForegroundColor Green
-uv pip install -r zephyr/scripts/requirements.txt -r nrf/scripts/requirements.txt -r bootloader/mcuboot/scripts/requirements.txt
+uv pip install -r zephyr/scripts/requirements.txt 
+# -r nrf/scripts/requirements.txt -r bootloader/mcuboot/scripts/requirements.txt
 
 Write-Host "`n配置 Zephyr 环境变量..." -ForegroundColor Green
-.\zephyr\zephyr-env.cmd
+# .\zephyr\zephyr-env.cmd
 
-Write-Host "`n安装完成！" -ForegroundColor Green
-Write-Host "您现在可以开始 Zephyr 开发了。" -ForegroundColor Green
+# 安装nRF工具
+Write-Host "`n正在安装 nRF 开发工具..." -ForegroundColor Green
+Write-Host "安装 BLE Sniffer..." -ForegroundColor Yellow
+nrfutil install ble-sniffer
+
+Write-Host "安装工具链管理器..." -ForegroundColor Yellow
+nrfutil install toolchain-manager
+
+Write-Host "配置工具链安装目录..." -ForegroundColor Yellow
+nrfutil toolchain-manager config --set install-dir=.
+
+Write-Host "安装 nRF Connect SDK v2.9.0..." -ForegroundColor Yellow
+nrfutil toolchain-manager install --ncs-version v2.9.0
