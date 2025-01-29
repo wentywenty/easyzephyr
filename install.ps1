@@ -127,7 +127,10 @@ function Start-Installation {
 
                 Write-Host "安装 jlink,请手动访问" -ForegroundColor Yellow
                 Write-Host "https://www.segger.com/downloads/jlink/JLink_Windows_x86_64.exe" -ForegroundColor Yellow
-            
+
+                Write-Host "安装 nrf_command_line_tools,请手动访问" -ForegroundColor Yellow
+                Write-Host "https://www.nordicsemi.com/Products/Development-tools/nrf-command-line-tools/download#infotabs" -ForegroundColor Yellow
+                
             }
             '3' {
                 uv venv
